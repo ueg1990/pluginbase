@@ -316,7 +316,7 @@ class PluginSource(object):
         except AttributeError:
             pass
         prefix = modname + '.'
-        _sys.modules.pop(modname)
+        _sys.modules.pop(modname, None)
         for key, value in list(_sys.modules.items()):
             if not key.startswith(prefix):
                 continue
